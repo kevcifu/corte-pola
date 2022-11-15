@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/style.css" />
+        <script src="/js/bootstrap.bundle.js"></script>
+        <script src="/js/jquery.slim.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-primary sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Corte & Pola</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link link-light"
+                                aria-current="page"
+                                href="/productos.html"
+                                >Mis pedidos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link link-light"
+                                href="/formulario.html"
+                                >Agregar producto</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-3">
+            <h2>Mis pedidos</h2>
+            <p>Busca y filtra tus pedidos aquí:</p>
+            <input
+                class="form-control"
+                id="myInput"
+                type="text"
+                placeholder="Buscar.."
+            />
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre del Producto</th>
+                        <th>Cedula</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr>
+                        <td>
+                            <a href="/order.html"> Pilsen </a>
+                        </td>
+                        <td>1234667</td>
+                        <td>8</td>
+                    </tr>
+
+                    <tr>
+                        <td><a href="/order.html"> Aguila </a></td>
+                        <td>1234667</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/order.html"> Andina </a></td>
+                        <td>1234667</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/order.html"> Poker </a></td>
+                        <td>1234667</td>
+                        <td>35</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Al dar clic en el nombre del producto, podra
+                <strong>editarlo y eliminarlo</strong>
+            </p>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#myInput').on('keyup', function () {
+                    var value = $(this).val().toLowerCase();
+                    $('#myTable tr').filter(function () {
+                        $(this).toggle(
+                            $(this).text().toLowerCase().indexOf(value) > -1
+                        );
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

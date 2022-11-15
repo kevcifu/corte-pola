@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="/css/bootstrap.min.css"
+            rel="stylesheet"
+            id="bootstrap-css"
+        />
+        <link rel="stylesheet" href="/style.css" />
+        <title>Iniciar Sesión</title>
+    </head>
+    <body>
+        <div class="row vh-100 justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="card border border-primary">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h3 class="card-title">Iniciar Sesion</h3>
+                            <img
+                                src="/img/icons8-male-user-64.png"
+                                alt="user-pic"
+                            />
+                        </div>
+                        <div class="container">
+                            <form
+                                class="needs-validation was-validated"
+                                method="post"
+                                action="/formulario.html"
+                                novalidate
+                            >
+                                <div class="mb-3">
+                                    <label for="user" class="form-label"
+                                        >Nombre de usuario</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="user"
+                                        id="username"
+                                        class="form-control"
+                                        placeholder="username"
+                                        aria-describedby="validate-user"
+                                        oninput="validarInput()"
+                                        onchange="toggleButton()"
+                                        required
+                                    />
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese un email valido.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="psw" class="form-label"
+                                        >Password</label
+                                    >
+                                    <input
+                                        type="password"
+                                        name="psw"
+                                        id="password"
+                                        class="form-control"
+                                        placeholder="12345@"
+                                        aria-describedby="validate-psw"
+                                        oninput="validarInput()"
+                                        onchange="toggleButton()"
+                                        required
+                                    />
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese una contraseña valida.
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button
+                                        type="submit"
+                                        class="btn btn-outline-primary"
+                                        id="submitButton"
+                                        disabled
+                                    >
+                                        <a
+                                            href="/formulario.html"
+                                            class="validar-link"
+                                            >Iniciar Sesion</a
+                                        >
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/bootstrap.min.js"></script>
+        <script>
+            (() => {
+                'use strict';
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation');
+
+                // Loop over them and prevent submission
+                Array.from(forms).forEach((form) => {
+                    form.addEventListener(
+                        'submit',
+                        (event) => {
+                            if (!form.checkValidity()) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+
+                            form.classList.add('was-validated');
+                        },
+                        false
+                    );
+                });
+            })();
+            function toggleButton() {
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                if (username && password) {
+                    document.getElementById('submitButton').disabled = false;
+                } else {
+                    document.getElementById('submitButton').disabled = true;
+                }
+            }
+        </script>
+    </body>
+</html>

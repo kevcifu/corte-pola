@@ -1,0 +1,12 @@
+body {
+    background-color: #e3f2fd;
+}
+.validar-link:hover, .validar-link:link, .validar-link:visited, .validar-link:focus, .validar-link:active{
+    color: inherit;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.navbar-brand:hover, .navbar-brand:link, .navbar-brand:visited, .navbar-brand:focus, .navbar-brand:active{
+    color: #ffffff;
+}
