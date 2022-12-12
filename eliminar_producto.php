@@ -11,7 +11,6 @@ $result = mysqli_query($conn, $consulta);
 
 if ($result) {
     echo "<script>alert('Producto eliminado con exito'); window.location = 'productos.php'</script>";
-    header("Location: productos.php");
 } else {
     echo "Error al eliminar el producto";
 }
