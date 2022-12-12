@@ -177,7 +177,7 @@ if (isset($_POST['editar'])) {
                 <span class="input-group-text">Detalles adicionales</span>
                 <textarea class="form-control" aria-label="With textarea"
                     placeholder="Detalles en la dirección, valor, disponibilidad, nombre de quien entrega, etc."
-                    rows="4" name="details" value="<?= $row['details'] ?>"></textarea>
+                    rows="4" name="details" ><?= $row['details'] ?>"</textarea>
             </div>
             <div class="inline-block">
                 <button type="submit" class="btn btn-primary" name="editar">

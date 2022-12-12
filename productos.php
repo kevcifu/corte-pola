@@ -56,7 +56,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             <thead>
                 <tr>
                     <th>Nombre del Producto</th>
-                    <th>Cedula</th>
+                    <th>Documento</th>
                     <th>Cantidad</th>
                     <th>Precio</th>
                     <th>Total</th>
@@ -71,7 +71,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                             $total = $row["productcant"] * $row["productprice"] . " COP";
                             echo "<tr>";
                             echo "<td>" . $row["productname"] . "</td>";
-                            echo "<td>" . $row["documentnumber"] . "</td>";
+                            echo "<td>" . "<strong>$row[tdocument]</strong>" . " " . $row["documentnumber"] . "</td>";
                             echo "<td>" . $row["productcant"] . "</td>";
                             echo "<td>" . $row["productprice"] . "</td>";
                             echo "<td>" . $total . "</td>";
