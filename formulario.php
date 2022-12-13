@@ -66,11 +66,8 @@ if (isset($_SESSION["id"]) == false) {
                 <select class="form-select" id="user-id-type" name="tdocument" required>
                     <option value=""></option>
                     <option value="CC">CC</option>
-                    <option value="CC-DIG">CC DIG</option>
                     <option value="CE">CE</option>
                     <option value="NIT">NIT</option>
-                    <option value="NUIT">NUIT</option>
-                    <option value="NES">NES</option>
                     <option value="RUT">RUT</option>
                 </select>
                 <div class="invalid-feedback">
